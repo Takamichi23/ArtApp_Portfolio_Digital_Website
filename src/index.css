@@ -1,0 +1,341 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --crt-crimson: #9e0b0f;
+    --crt-crimson-deep: #6b080a;
+    --crt-glass-center: #d4e0ea;
+    --crt-glass-mid: #bdccd9;
+    --crt-glass-edge: #90a4b5;
+    --crt-ink: #1e242b;
+    --crt-muted: #4b5866;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  }
+}
+
+.font-display {
+  font-family: "Fraunces", Georgia, serif;
+}
+
+.font-logo {
+  font-family: "Fredoka", "Plus Jakarta Sans", sans-serif;
+}
+
+.font-mono-retro {
+  font-family: "Space Mono", ui-monospace, monospace;
+}
+
+.font-osd {
+  font-family: "VT323", ui-monospace, monospace;
+}
+
+/* Studio room backdrop so the full vintage TV cabinet silhouette pops clearly */
+.tv-studio-backdrop {
+  background:
+    radial-gradient(ellipse 75% 65% at 50% 45%, #2a1819 0%, #160c0d 55%, #090506 100%);
+}
+
+/* =========================================================
+   CHUNKY VINTAGE CRIMSON CRT TV CABINET (Reference Image 1)
+   ========================================================= */
+.crt-tv-outer {
+  background:
+    linear-gradient(180deg, rgba(255, 190, 180, 0.22) 0%, rgba(255, 190, 180, 0) 8%),
+    radial-gradient(ellipse 95% 45% at 50% 0%, #b92d2f 0%, #8e181b 34%, #5e1013 72%, #3a090c 100%);
+  border: 2px solid rgba(255, 175, 165, 0.18);
+  box-shadow:
+    inset 0 4px 12px rgba(255, 200, 190, 0.28),
+    inset 0 -14px 28px rgba(15, 3, 4, 0.85),
+    inset 10px 0 22px rgba(20, 4, 6, 0.55),
+    inset -10px 0 22px rgba(20, 4, 6, 0.55),
+    0 32px 80px rgba(0, 0, 0, 0.92),
+    0 6px 20px rgba(0, 0, 0, 0.75);
+}
+
+/* Deeply sloped matte charcoal CRT inner shroud (single clean bezel, no double moat) */
+.crt-bezel-recess {
+  background:
+    linear-gradient(160deg, #2d2728 0%, #161415 28%, #0b0a0b 68%, #211d1e 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    inset 0 8px 18px rgba(0, 0, 0, 0.94),
+    inset 0 -4px 12px rgba(255, 255, 255, 0.07),
+    0 2px 0 rgba(255, 185, 175, 0.14),
+    0 -2px 4px rgba(0, 0, 0, 0.75);
+  border-radius: 2.35rem / 2rem;
+}
+
+/* Gently curved convex CRT glass screen */
+.crt-screen-glass {
+  position: relative;
+  border-radius: 2.1rem / 1.8rem;
+  background:
+    radial-gradient(ellipse 78% 76% at 50% 48%, #dae5ef 0%, #c8d7e4 54%, #b0c1d1 82%, #8397a9 100%);
+  box-shadow:
+    inset 0 0 54px rgba(10, 18, 28, 0.52),
+    inset 0 0 16px rgba(5, 10, 16, 0.6),
+    inset 0 6px 22px rgba(255, 255, 255, 0.36);
+  overflow: hidden;
+}
+
+/* Convex barrel glass reflection & deep curved corner shadow */
+.crt-glass-glare {
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 88% 85% at 50% 50%, transparent 56%, rgba(12, 18, 26, 0.38) 84%, rgba(4, 8, 12, 0.78) 100%),
+    radial-gradient(ellipse 65% 24% at 50% 4%, rgba(255, 255, 255, 0.32) 0%, rgba(255, 255, 255, 0) 100%),
+    radial-gradient(circle at 13% 74%, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0) 20%);
+}
+
+/* Analog film dust & fine grain speckles */
+.crt-analog-grain {
+  pointer-events: none;
+  background-image:
+    radial-gradient(rgba(30, 38, 48, 0.14) 0.7px, transparent 0.7px),
+    radial-gradient(rgba(145, 22, 22, 0.08) 0.6px, transparent 0.6px);
+  background-size: 27px 27px, 43px 43px;
+  background-position: 0 0, 14px 19px;
+  opacity: 0.45;
+}
+
+/* Optional toggleable gentle CRT scanlines for active reading */
+.crt-scanlines-subtle {
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0px,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(16, 28, 42, 0.05) 3px,
+    rgba(16, 28, 42, 0.05) 4px
+  );
+}
+
+/* Tactile vintage TV speaker vent slots */
+.tv-speaker-grille {
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(10, 4, 5, 0.82) 0px,
+    rgba(10, 4, 5, 0.82) 3px,
+    rgba(255, 190, 180, 0.12) 3px,
+    rgba(255, 190, 180, 0.12) 4px,
+    transparent 4px,
+    transparent 8px
+  );
+}
+
+/* Sculpted rotary TV dial knob */
+.tv-dial-knob {
+  background:
+    radial-gradient(circle at 32% 28%, #524b4c 0%, #242021 55%, #110f10 100%);
+  box-shadow:
+    inset 0 2px 3px rgba(255, 255, 255, 0.22),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.85),
+    0 4px 10px rgba(0, 0, 0, 0.75);
+}
+
+/* =========================================================
+   MATCHED PALE BLUE-GREY CRT GLASS CHANNEL-SWITCH EFFECT
+   ========================================================= */
+.crt-grey-phosphor {
+  background:
+    radial-gradient(ellipse 76% 74% at 50% 48%, #e1ebf4 0%, #c8d7e4 52%, #aabcc9 80%, #788c9e 100%);
+  box-shadow:
+    inset 0 0 60px rgba(10, 18, 28, 0.56),
+    inset 0 0 18px rgba(5, 10, 16, 0.62);
+}
+
+/* Crisp CRT phosphor dot-matrix aperture grille tuned for light blue-grey glass */
+.crt-phosphor-dots {
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.58) 1.1px, transparent 1.45px),
+    radial-gradient(rgba(28, 44, 62, 0.24) 1.15px, transparent 1.55px);
+  background-size: 6px 6px;
+  background-position: 0 0, 3px 3px;
+}
+
+.crt-phosphor-grille {
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(22, 36, 52, 0.12) 0px,
+      rgba(22, 36, 52, 0.12) 1px,
+      transparent 1px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(20, 34, 48, 0.16) 0px,
+      rgba(20, 34, 48, 0.16) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+}
+
+/* Animated subtle analog TV static snow tuned to match the pale CRT glass */
+@keyframes crtSnowShift {
+  0% { background-position: 0 0, 12px 8px; }
+  25% { background-position: -24px 18px, 30px -14px; }
+  50% { background-position: 16px -22px, -18px 26px; }
+  75% { background-position: -14px -10px, 22px 16px; }
+  100% { background-position: 0 0, 12px 8px; }
+}
+
+.crt-static-snow {
+  background-image:
+    repeating-radial-gradient(circle at 18% 32%, rgba(255, 255, 255, 0.45) 0 1px, transparent 1px 4px),
+    repeating-radial-gradient(circle at 74% 66%, rgba(35, 52, 70, 0.22) 0 1px, transparent 1px 5px);
+  background-size: 38px 38px, 52px 52px;
+  animation: crtSnowShift 160ms steps(4) infinite;
+}
+
+@keyframes crtScanSweep {
+  0% {
+    transform: translateY(-120%);
+    opacity: 0.18;
+  }
+  45% {
+    opacity: 0.72;
+  }
+  100% {
+    transform: translateY(220%);
+    opacity: 0.14;
+  }
+}
+
+@keyframes crtStaticFlicker {
+  0% {
+    opacity: 0;
+    transform: scaleY(0.06) scaleX(1.1);
+    filter: brightness(1.9) contrast(1.3);
+  }
+  14% {
+    opacity: 1;
+    transform: scaleY(1.015) scaleX(1);
+    filter: brightness(1.18) contrast(1.12);
+  }
+  28% {
+    transform: scaleY(0.995) skewX(0.5deg);
+    filter: brightness(1.04);
+  }
+  44% {
+    transform: scaleY(1) skewX(0deg);
+    filter: brightness(1);
+  }
+  82% {
+    opacity: 1;
+    transform: scaleY(1) scaleX(1);
+    filter: brightness(1.05);
+  }
+  92% {
+    opacity: 0.94;
+    transform: scaleY(0.12) scaleX(1.06);
+    filter: brightness(1.85);
+  }
+  100% {
+    opacity: 0;
+    transform: scaleY(0.02) scaleX(1.1);
+    filter: brightness(2.2);
+  }
+}
+
+@keyframes crtHorizontalGlitch {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-5px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-3px); }
+  80% { transform: translateX(2px); }
+}
+
+@keyframes contentReveal {
+  0% {
+    opacity: 0;
+    filter: blur(2px) brightness(1.15);
+    transform: scale(0.992);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0) brightness(1);
+    transform: scale(1);
+  }
+}
+
+.animate-crt-switch {
+  animation: crtStaticFlicker 680ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-crt-sweep {
+  animation: crtScanSweep 520ms linear infinite;
+}
+
+.animate-crt-osd {
+  animation: crtHorizontalGlitch 260ms steps(2) 1;
+}
+
+.animate-content-reveal {
+  animation: contentReveal 280ms ease-out forwards;
+}
+
+/* Tactile Tape Strip Shadow from Reference Image 1 */
+.tape-strip {
+  box-shadow: 2px 3px 6px rgba(18, 24, 34, 0.28);
+  transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 180ms ease;
+}
+
+.tape-strip:hover {
+  transform: translateY(-3px) rotate(-0.8deg);
+  box-shadow: 4px 7px 14px rgba(18, 24, 34, 0.34);
+}
+
+/* Custom sleek inner scrollbar inside the CRT screen */
+.crt-scroll::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.crt-scroll::-webkit-scrollbar-track {
+  background: rgba(24, 36, 48, 0.08);
+  border-radius: 999px;
+}
+
+.crt-scroll::-webkit-scrollbar-thumb {
+  background: rgba(158, 11, 15, 0.38);
+  border-radius: 999px;
+}
+
+.crt-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(158, 11, 15, 0.65);
+}
+
+/* Letterpress ink styling for hero 'portfolio' wordmark */
+.hero-wordmark {
+  color: #a60a0d;
+  text-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.35),
+    1px 2px 4px rgba(80, 10, 12, 0.18);
+  letter-spacing: -0.025em;
+}
+
+/* Print / Export to PDF support */
+@media print {
+  body {
+    background: white !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}
