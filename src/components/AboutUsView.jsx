@@ -1,6 +1,6 @@
 import React from "react";
 import { GROUP_INFO, GROUP_MEMBERS } from "../data/membersData";
-import { Users, Calendar, Award, Sparkles, ArrowLeft, Code2 } from "lucide-react";
+import { Users, Award, Sparkles, ArrowLeft, Code2 } from "lucide-react";
 
 export default function AboutUsView({ onTuneChannel }) {
   return (
@@ -11,10 +11,6 @@ export default function AboutUsView({ onTuneChannel }) {
           <span className="inline-flex items-center gap-1.5 rounded-full bg-[#9e0b0f] px-3 py-1 text-[11px] font-mono-retro font-bold tracking-widest text-white uppercase">
             <Users className="h-3.5 w-3.5" />
             CH-99 · About Us · {GROUP_INFO.groupName}
-          </span>
-          <span className="inline-flex items-center gap-1.5 font-mono-retro text-xs text-[#4a5764]">
-            <Calendar className="h-3.5 w-3.5 text-[#9e0b0f]" />
-            Submission Target: {GROUP_INFO.submissionDate}
           </span>
         </div>
 
@@ -42,9 +38,6 @@ export default function AboutUsView({ onTuneChannel }) {
           </span>
           <span className="rounded-md bg-[#18222c]/8 px-2.5 py-1 text-[#18222c]">
             TEAM SIZE: {GROUP_INFO.totalMembers} MEMBERS
-          </span>
-          <span className="rounded-md bg-[#9e0b0f]/12 px-2.5 py-1 text-[#8c0c10] font-bold">
-            FINAL PERFORMANCE TASK (100 PTS)
           </span>
         </div>
       </div>

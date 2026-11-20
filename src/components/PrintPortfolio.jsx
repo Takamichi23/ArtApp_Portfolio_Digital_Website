@@ -17,7 +17,7 @@ export default function PrintPortfolio() {
           className="h-16 w-16 mx-auto rounded-xl border border-[#9e0b0f]/25 object-cover shadow-xs"
         />
         <div className="font-mono-retro text-xs uppercase tracking-widest text-[#9e0b0f]">
-          {GROUP_INFO.course} · Final Performance Task · {GROUP_INFO.groupName}
+          {GROUP_INFO.course} · Digital Portfolio · {GROUP_INFO.groupName}
         </div>
         <h1 className="font-display text-4xl font-bold text-[#9e0b0f]">
           Portfolio 2026

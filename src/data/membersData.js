@@ -3,7 +3,6 @@ export const GROUP_INFO = {
   course: "Art Appreciation (GE-AA)",
   semester: "Academic Year 2026–2027",
   title: "A Journey Through Art: From Western Art to Philippine and Bikolano Cultural Heritage",
-  submissionDate: "November 21, 2026",
   totalMembers: 10,
   aiDisclosure:
     "In compliance with Format Requirement #5, digital design assistance and AI tools were used to aid interactive web layout structuring and editorial refinement. All art-historical facts, curriculum concepts, legal citations (RA 10066, RA 7355), and artwork attributions were cross-checked by Group 3 against official course learning materials, NCCA archives, National Museum of the Philippines records, and academic texts.",
